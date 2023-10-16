@@ -1,14 +1,21 @@
-
 <script>
+
+import { store } from '../../data/store';
+
 export default {
-  name: 'singol-card'
+  name: 'singol-card',
+  data(){
+    return{
+      store
+    }
+  }
 }
 </script>
 
 <template>
 
   <div class="card-sp">
-    <div class="title">titolo :</div>
+    <div class="title">titolo : </div>
     <div class="original-title">titolo originale :</div>
     <div class="vote">Vote :</div>
     <div class="language">lingua</div>
