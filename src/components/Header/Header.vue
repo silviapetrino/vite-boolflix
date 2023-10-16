@@ -1,20 +1,56 @@
+
 <script>
+import { store } from '../../data/store';
+import axios from 'axios';
+
 export default {
-  name: 'Header'
+  name: 'Header',
+  data(){
+    return {
+      store
+    }
+  },
+  methods: {
+    // Call a generic API
+    getApi(api){
+      return axios.get(this.store.apiUrl + api, {
+        params: {
+          api_key: this.store.key,
+          query: this.store.searchText,
+          language: this.store.languageDefault
+        }
+      })
+    },
+    // search by movie 
+    search(){
+      this.getApi(this.store.searchMovie)
+      .then((res)=>{
+        store.foundedMovies = res.data.results
+        console.log(this.store.foundedMovies);
+      })
+    }
+  }
+  
 }
+
+
 </script>
+
 
 <template>
 
 <header>
   <div>logo</div>
 
-  <div class="searchbar input-group rounded">
-  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-  <button class="input-group-text border-0" id="search-addon">
+
+    <div class="searchbar input-group rounded">
+    <input @keyup.enter="search" v-model="this.store.searchText" type="search" class="form-control rounded" placeholder="Cerca film" aria-label="Search" aria-describedby="search-addon" />
+    <button class="input-group-text border-0" id="search-addon">
     <span>cerca</span>
-  </button>
-</div>
+    </button>
+    </div>
+
+
 
 </header>
   
@@ -22,12 +58,14 @@ export default {
   
 </template>
 
+
+
+
 <style lang="scss" scoped>
 @use "bootstrap/scss/bootstrap" as *;
 
 header {
   background-color: black;
-  color: white;
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -35,7 +73,6 @@ header {
     width: 300px;
     #search-addon {
       background-color: blue;
-      color: white;
     }
   }
 }

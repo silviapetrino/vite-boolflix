@@ -3,7 +3,7 @@
 
 import Header from './components/Header/Header.vue';
 import ContainerCards from './components/Main/ContainerCards.vue';
-
+import axios from 'axios';
 
 export default {
   name: "mainApp",

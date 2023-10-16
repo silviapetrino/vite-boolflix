@@ -18,15 +18,10 @@ export default {
 
 
     <div class="container py-5">
+      
       <div class="row">
         <singolCard />
-        <singolCard />
-        <singolCard />
-        <singolCard />
-        <singolCard />
-        <singolCard />
-        <singolCard />
-        <singolCard />
+     
 
       </div>
     </div>
