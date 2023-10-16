@@ -1,15 +1,29 @@
 
 <script>
-export default {
 
+import Header from './components/Header/Header.vue';
+import ContainerCards from './components/Main/ContainerCards.vue';
+
+
+export default {
+  name: "mainApp",
+  components: {
+    Header,
+    ContainerCards
+  }
 }
 </script>
 
 <template>
-  <h1>app</h1>
+
+  <Header />
+  <ContainerCards />
+
 </template>
 
 
-<style>
+<style lang="scss">
+
+@use './scss/main.scss' as *;
 
 </style>
