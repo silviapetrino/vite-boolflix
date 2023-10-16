@@ -6,7 +6,7 @@ import { store } from '../../data/store';
 
 export default {
 
-  name: "container cards",
+  name: 'container-cards',
   components: {
     Header,
     singolCard
@@ -15,8 +15,18 @@ export default {
     return{
       store
     }
+  },
+
+  computed: {
+            // Generate a single array with the search results
+    getResult(){
+      let searchResult = []
+      return searchResult = [...store.foundedMovies]
+    }  
   }
-}
+  
+  }
+
 </script>
 
 
@@ -25,10 +35,12 @@ export default {
 
 
     <div class="container py-5">
+      <h3 class="ms-4 fw-semibold"  v-if="getResult.length === 0">Cerca un film per accedere al nostro catalogo</h3>
+      <h3 class="ms-4 fw-semibold" v-else>Ecco i risultati della tua ricerca:</h3>
       
       <div class="row">
        
-
+        <singolCard  />
      
 
       </div>

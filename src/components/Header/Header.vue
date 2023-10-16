@@ -42,13 +42,17 @@ export default {
 <header>
   <div>logo</div>
 
+  <form @submit.prevent="search">
 
     <div class="searchbar input-group rounded">
-    <input @keyup.enter="search" v-model="this.store.searchText" type="search" class="form-control rounded" placeholder="Cerca film" aria-label="Search" aria-describedby="search-addon" />
+    <input v-model="this.store.searchText" type="search" class="form-control rounded" placeholder="Cerca film" aria-label="Search" aria-describedby="search-addon" />
     <button class="input-group-text border-0" id="search-addon">
     <span>cerca</span>
     </button>
     </div>
+  
+  </form>
+   
 
 
 

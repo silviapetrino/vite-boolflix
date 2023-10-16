@@ -8,6 +8,10 @@ export default {
     return{
       store
     }
+  },
+  props: {
+    poster: 'String',
+    result: Object
   }
 }
 </script>
