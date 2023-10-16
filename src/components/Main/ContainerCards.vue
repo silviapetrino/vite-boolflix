@@ -1,17 +1,44 @@
+
+
+
 <script>
+import singolCard from './singolCard.vue';
 export default {
-  name: "container cards"
+
+  name: "container cards",
+  components: {
+    singolCard
+  }
 }
 </script>
 
 
 
 <template>
-  <h2>container Cards</h2>
+
+
+    <div class="container py-5">
+      <div class="row">
+        <singolCard />
+        <singolCard />
+        <singolCard />
+        <singolCard />
+        <singolCard />
+        <singolCard />
+        <singolCard />
+        <singolCard />
+
+      </div>
+    </div>
+
+  
+
 </template>
 
 
 
-<style>
+<style lang="scss" scoped>
+
+
 
 </style>
