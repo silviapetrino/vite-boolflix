@@ -40,7 +40,9 @@ export default {
       
       <div class="row">
        
-        <singolCard  />
+        <singolCard v-for="foundResult in getResult" 
+        
+        :result="foundResult" />
      
 
       </div>
