@@ -10,8 +10,7 @@ export default {
     }
   },
   props: {
-    poster: 'String',
-    result: Object
+    result: Object,
   }
 }
 </script>
@@ -23,7 +22,7 @@ export default {
     <div class="original-title">titolo originale :</div>
     <div class="vote">Vote :</div>
     <div class="language">lingua</div>
-    <div class="overview">Overview :</div>
+    <div class="overview">{{ result.overview }}</div>
   </div>
   
 </template>
