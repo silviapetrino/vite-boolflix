@@ -62,9 +62,9 @@ export default {
 <style lang="scss" scoped>
 
 .card-sp {
-  width: calc(100% / 6);
+  width: calc(100% / 5.5);
   background-color: black;
-  margin: 5px;
+  margin:  10px;
   padding: 5px;
   font-size: .8rem;
   position: relative;
@@ -78,6 +78,8 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     img {
     width: 100%;
     height: 100%;
