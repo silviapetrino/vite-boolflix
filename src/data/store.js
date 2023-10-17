@@ -9,5 +9,7 @@ export const store = reactive({
   searchMovie: 'search/movie?',
   foundedMovies: [],
   searchTv: 'search/tv?',
-  foundTv: []
+  foundTv: [],
+
+  imagePath: 'https://image.tmdb.org/t/p/w342'
 })

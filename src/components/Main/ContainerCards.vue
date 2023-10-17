@@ -45,9 +45,9 @@ export default {
 
         <div class="row justify-content-between">
         <h3 class="fw-semibold">Film:</h3>
-        <singolCard v-for="(foundResult, index) in getResultMovie" :key="`movie${index}`" :result="foundResult" />
+        <singolCard v-for="(foundResult, index) in getResultMovie" :key="`movie${index}`" :result="foundResult" :poster_path="foundResult.poster_path" />
         <h3 class="fw-semibold">Serie Tv:</h3>
-        <singolCard v-for="(foundResult, index) in getResultTv" :key="`tv${index}`" :result="foundResult" />
+        <singolCard v-for="(foundResult, index) in getResultTv" :key="`tv${index}`" :result="foundResult" :poster_path="foundResult.poster_path" />
      
       </div>
 
