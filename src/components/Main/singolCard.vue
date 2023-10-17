@@ -33,13 +33,14 @@ export default {
 <template>
 
   <div class="card-sp">
-    <div class="title">titolo : {{ result.title }}</div>
-    <div class="original-title">titolo originale : {{ result.original_title }}</div>
+    <div class="title">titolo : {{ result.title || result.name }}</div>
+    <div class="original-title">titolo originale : {{ result.original_title || result.original_name}}</div>
     <div class="vote">
       <i class="fa-solid fa-star"></i>
     </div>
     <img :src="returnFlag" :alt="result.original_language" class="language">
-    <div class="overview"><span class="fw-semibold">Descrizione:</span> {{ result.overview }}</div>
+    <div v-if="result.overview != ''" class="fw-semibold">Sinossi:</div>
+    <div class="overview">{{ result.overview || result.overview }}</div>
   </div>
   
 </template>

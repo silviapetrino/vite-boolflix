@@ -19,10 +19,14 @@ export default {
 
   computed: {
             // Generate a single array with the search results
-    getResult(){
+    getResultMovie(){
       let searchResult = []
       return searchResult = [...store.foundedMovies]
-    }  
+    },
+    getResultTv(){
+      let searchResult = []
+      return searchResult = [...store.foundTv]
+    }   
   }
   
   }
@@ -35,14 +39,14 @@ export default {
 
 
     <div class="container p-4">
-      <h3 class="fw-semibold"  v-if="getResult.length === 0">Cerca un film per accedere al nostro catalogo</h3>
+      <h3 class="fw-semibold"  v-if="getResultMovie.length === 0">Cerca un film per accedere al nostro catalogo</h3>
       <h3 class="fw-semibold" v-else>Ecco i risultati della tua ricerca:</h3>
       
       <div class="row justify-content-between ">
        
-        <singolCard v-for="(foundResult, index) in getResult" :key="`movie${index}`" :result="foundResult" />
+        <singolCard v-for="(foundResult, index) in getResultMovie" :key="`movie${index}`" :result="foundResult" />
+        <singolCard v-for="(foundResult, index) in getResultTv" :key="`tv${index}`" :result="foundResult" />
      
-
       </div>
     </div>
 
