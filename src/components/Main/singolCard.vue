@@ -66,13 +66,13 @@ export default {
   width: calc(100% / 5.5);
   background-color: rgba($color: #000000, $alpha: .7);
   min-height: 200px;
-  margin: 5px;
+  margin: 10px;
   padding: 5px;
   font-size: .8rem;
   position: relative;
   cursor: pointer;
 
-  &:hover .cover {
+  &:hover img.cover {
     display: none;
   }
 
@@ -81,8 +81,9 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
+    min-height: 200px;
   
-    .cover {
+    img.cover {
     width: 100%;
     height: 100%;
     object-fit: cover;
