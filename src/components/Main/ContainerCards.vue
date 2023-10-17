@@ -40,7 +40,7 @@ export default {
       
       <div class="row justify-content-between ">
        
-        <singolCard v-for="foundResult in getResult" :result="foundResult" />
+        <singolCard v-for="(foundResult, index) in getResult" :key="`movie${index}`" :result="foundResult" />
      
 
       </div>

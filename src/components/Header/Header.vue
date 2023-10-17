@@ -28,6 +28,11 @@ export default {
         store.foundedMovies = res.data.results
         console.log(this.store.foundedMovies);
       })
+      this.getApi(this.store.searchTv)
+      .then((res) => {
+        store.foundTv = res.data.results
+        console.log(this.store.foundTv)
+      })
     }
   }
   
@@ -47,7 +52,7 @@ export default {
   <form @submit.prevent="search">
 
     <div class="searchbar input-group rounded">
-    <input v-model="this.store.searchText" type="search" class="form-control rounded" placeholder="Cerca film" aria-label="Search" aria-describedby="search-addon" />
+    <input v-model.trim="this.store.searchText" type="search" class="form-control rounded" placeholder="Cerca film" aria-label="Search" aria-describedby="search-addon" />
     <button class="input-group-text border-0" id="search-addon">
     <span>cerca</span>
     </button>

@@ -1,7 +1,7 @@
 <script>
 
 import { store } from '../../data/store';
-import StarVote from './partials/StarVote.vue';
+
 
 
 export default {
@@ -12,10 +12,7 @@ export default {
       
     }
   },
-  components: {
-    StarVote
-  },
- 
+
   props: {
     result: Object,
   },
@@ -39,7 +36,7 @@ export default {
     <div class="title">titolo : {{ result.title }}</div>
     <div class="original-title">titolo originale : {{ result.original_title }}</div>
     <div class="vote">
-      <StarVote />
+      <i class="fa-solid fa-star"></i>
     </div>
     <img :src="returnFlag" :alt="result.original_language" class="language">
     <div class="overview"><span class="fw-semibold">Descrizione:</span> {{ result.overview }}</div>
