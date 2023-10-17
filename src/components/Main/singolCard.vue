@@ -68,12 +68,11 @@ export default {
   padding: 5px;
   font-size: .8rem;
   position: relative;
-  transition: all 1s;
+
 
   &:hover img {
-    opacity: 0;
+    display: none;
   }
-
 
   .poster {
     position: absolute;
@@ -83,7 +82,6 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity .5s ease;
    }
   }
   
