@@ -50,8 +50,8 @@ export default {
   <form @submit.prevent="search">
 
     <div class="searchbar input-group rounded">
-    <input v-model.trim="this.store.searchText" type="search" class="form-control rounded" placeholder="Cerca film" aria-label="Search" aria-describedby="search-addon" />
-    <button class="input-group-text border-0" id="search-addon">
+    <input v-model.trim="this.store.searchText" type="search" class="form-control" placeholder="Cerca film o serie tv" aria-label="Search" aria-describedby="search-addon" />
+    <button class="input-group-text btn btn-danger" id="search-addon">
     <span>cerca</span>
     </button>
     </div>
@@ -80,9 +80,6 @@ header {
   padding: 10px;
   .searchbar {
     width: 300px;
-    #search-addon {
-      background-color: blue;
-    }
   }
 }
 

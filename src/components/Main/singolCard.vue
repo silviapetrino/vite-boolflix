@@ -18,15 +18,17 @@ export default {
     poster_path: String
   },
 
-  methods: {
+  computed: {
     returnFlag(){
-      if(result.original_language === 'en') {
+      
+      if (this.result.original_language === 'en') {
         return '/public/en.png'
-      } else if (result.original_language === 'it') {
+      } else if (this.result.original_language === 'it') {
         return '/public/it.png'
-      }
-    } 
-  },
+      } else return this.result.original_language
+
+    }
+  }
   
  
 
@@ -39,9 +41,8 @@ export default {
 
     <!-- poster  -->
     <div class="poster">
-      <img :src="`https://image.tmdb.org/t/p/w342/${poster_path}`">
+      <img class="cover" :src="`https://image.tmdb.org/t/p/w342/${poster_path}`">
     </div>
-    
     
      <!--/poster  -->
 
@@ -50,9 +51,9 @@ export default {
     <div class="vote">
       <i class="fa-solid fa-star"></i>
     </div>
-    <img :src="returnFlag" :alt="result.original_language" class="language">
+    <img :src="returnFlag" :alt="result.original_language" class="language" width="30">
     <div v-if="result.overview != ''" class="fw-semibold">Sinossi:</div>
-    <div class="overview">{{ result.overview || result.overview }}</div>
+    <div class="overview p-2">{{ result.overview || result.overview }}</div>
   </div>
   
 </template>
@@ -63,14 +64,15 @@ export default {
 
 .card-sp {
   width: calc(100% / 5.5);
-  background-color: black;
-  margin:  10px;
+  background-color: rgba($color: #000000, $alpha: .7);
+  min-height: 200px;
+  margin: 5px;
   padding: 5px;
   font-size: .8rem;
   position: relative;
+  cursor: pointer;
 
-
-  &:hover img {
+  &:hover .cover {
     display: none;
   }
 
@@ -79,8 +81,8 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    img {
+  
+    .cover {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -88,7 +90,7 @@ export default {
   }
   
   .overview {
-    overflow-y: scroll;
+    overflow-y: scroll !important;
     height: 200px;
   }
 }

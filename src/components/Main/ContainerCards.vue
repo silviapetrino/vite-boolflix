@@ -39,7 +39,7 @@ export default {
 
 
     <div class="container p-4">
-      <h3 class="fw-semibold"  v-if="getResultMovie.length === 0 & getResultTv.length === 0">Cerca un film per accedere al nostro catalogo</h3>
+      <h3 class="fw-semibold"  v-if="getResultMovie.length === 0 & getResultTv.length === 0">Cerca un film o una serie Tv per accedere al nostro catalogo</h3>
       <div class="fw-semibold" v-else>
         <h3>Ecco i risultati della tua ricerca:</h3>
 
