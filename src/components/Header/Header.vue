@@ -27,7 +27,8 @@ export default {
       .then((res)=>{
         store.foundedMovies = res.data.results
         store.searchText = ''
-      })
+      }) 
+      // search by tv 
       this.getApi(this.store.searchTv)
       .then((res) => {
         store.foundTv = res.data.results
@@ -54,7 +55,7 @@ export default {
     <div class="searchbar input-group rounded">
     <input v-model.trim="this.store.searchText" type="search" class="form-control" placeholder="Cerca film o serie tv" aria-label="Search" aria-describedby="search-addon" />
     <button class="input-group-text btn btn-danger" id="search-addon">
-    <span>cerca</span>
+    <span><i class="fa-solid fa-magnifying-glass"></i></span>
     </button>
     </div>
   
