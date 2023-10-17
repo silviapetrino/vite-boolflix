@@ -1,17 +1,35 @@
 <script>
 
 import { store } from '../../data/store';
+import StarVote from './partials/StarVote.vue';
+
 
 export default {
   name: 'singol-card',
   data(){
     return{
       store
+      
     }
   },
+  components: {
+    StarVote
+  },
+ 
   props: {
     result: Object,
-  }
+  },
+
+  methods: {
+    returnFlag(){
+      if(result.original_language === 'en') {
+        return '/public/en.png'
+      } else if (result.original_language === 'it') {
+        return '/public/it.png'
+      }
+    }
+  },
+
 }
 </script>
 
@@ -20,9 +38,11 @@ export default {
   <div class="card-sp">
     <div class="title">titolo : {{ result.title }}</div>
     <div class="original-title">titolo originale : {{ result.original_title }}</div>
-    <div class="vote">Vote :</div>
-    <div class="language">lingua</div>
-    <div class="overview">{{ result.overview }}</div>
+    <div class="vote">
+      <StarVote />
+    </div>
+    <img :src="returnFlag" :alt="result.original_language" class="language">
+    <div class="overview"><span class="fw-semibold">Descrizione:</span> {{ result.overview }}</div>
   </div>
   
 </template>
