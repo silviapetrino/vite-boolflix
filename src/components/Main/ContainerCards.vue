@@ -44,12 +44,11 @@ export default {
         <h3>Ecco i risultati della tua ricerca:</h3>
 
         <div class="row justify-content-between">
-        <h3 class="fw-semibold">Film:</h3>
-        <singolCard v-for="(foundResult, index) in getResultMovie" :key="`movie${index}`" :result="foundResult" :poster_path="foundResult.poster_path" />
-        <h3 class="fw-semibold">Serie Tv:</h3>
-        <singolCard v-for="(foundResult, index) in getResultTv" :key="`tv${index}`" :result="foundResult" :poster_path="foundResult.poster_path" />
-     
-      </div>
+          <h3 class="fw-semibold py-4">Film:</h3>
+          <singolCard v-for="(foundResult, index) in getResultMovie" :key="`movie${index}`" :result="foundResult" :poster_path="foundResult.poster_path" />
+          <h3 class="fw-semibold py-4">Serie Tv:</h3>
+          <singolCard v-for="(foundResult, index) in getResultTv" :key="`tv${index}`" :result="foundResult" :poster_path="foundResult.poster_path" />
+        </div>
 
       </div>
       

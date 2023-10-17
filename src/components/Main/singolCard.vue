@@ -63,11 +63,10 @@ export default {
 <style lang="scss" scoped>
 
 .card-sp {
-  width: calc(100% / 5.5);
+  width: calc(100% / 5.8);
   background-color: rgba($color: #000000, $alpha: .7);
-  min-height: 200px;
-  margin: 10px;
-  padding: 5px;
+  min-height: 300px;
+  margin: 8px;
   font-size: .8rem;
   position: relative;
   cursor: pointer;
@@ -81,7 +80,7 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 200px;
+  
   
     img.cover {
     width: 100%;
