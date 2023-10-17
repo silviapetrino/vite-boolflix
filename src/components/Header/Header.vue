@@ -26,10 +26,12 @@ export default {
       this.getApi(this.store.searchMovie)
       .then((res)=>{
         store.foundedMovies = res.data.results
+        store.searchText = ''
       })
       this.getApi(this.store.searchTv)
       .then((res) => {
         store.foundTv = res.data.results
+        store.searchText = ''
       })
     }
   }
