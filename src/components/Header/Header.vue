@@ -40,7 +40,9 @@ export default {
 <template>
 
 <header>
-  <div>logo</div>
+  <div>
+    <img src="/public/logo-boolflix.png" width="120" class="p-2">
+  </div>
 
   <form @submit.prevent="search">
 
