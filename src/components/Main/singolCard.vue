@@ -1,21 +1,23 @@
 <script>
 
 import { store } from '../../data/store';
-
-
+import StarVote from './partials/StarVote.vue';
 
 export default {
   name: 'singol-card',
   data(){
     return{
-      store
-      
+      store,
+      maxStars: 5,
+      maxVote: 10
     }
   },
-
   props: {
     result: Object,
     poster_path: String
+  },
+  components: {
+    StarVote
   },
 
   computed: {
@@ -26,7 +28,11 @@ export default {
       } else if (this.result.original_language === 'it') {
         return '/public/it.png'
       } else return this.result.original_language
-
+    },
+    averageCalc(){
+      const starValue = this.maxVote / this.maxStars;
+      const finalVote = Math.ceil(this.result.vote_average / starValue);
+      return finalVote
     }
   }
   
@@ -48,9 +54,7 @@ export default {
 
     <div class="title">titolo : {{ result.title || result.name }}</div>
     <div class="original-title">titolo originale : {{ result.original_title || result.original_name}}</div>
-    <div class="vote">
-      <i class="fa-solid fa-star"></i>
-    </div>
+    <StarVote :finalVote="averageCalc" :maxStars="this.maxStars"/>
     <img :src="returnFlag" :alt="result.original_language" class="language" width="30">
     <div v-if="result.overview != ''" class="fw-semibold">Sinossi:</div>
     <div class="overview p-2">{{ result.overview || result.overview }}</div>
