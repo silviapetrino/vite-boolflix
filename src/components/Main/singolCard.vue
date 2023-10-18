@@ -24,9 +24,9 @@ export default {
     returnFlag(){
       
       if (this.result.original_language === 'en') {
-        return '/public/en.png'
+        return '/en.png'
       } else if (this.result.original_language === 'it') {
-        return '/public/it.png'
+        return '/it.png'
       } else return this.result.original_language
     },
     averageCalc(){
@@ -47,7 +47,8 @@ export default {
 
     <!-- poster  -->
     <div class="poster">
-      <img class="cover" :src="`https://image.tmdb.org/t/p/w342/${poster_path}`">
+      <img v-if="poster_path" class="cover" :src="`https://image.tmdb.org/t/p/w342/${poster_path}`">
+      <img v-else src="/public/not-avaiable.png" :alt="result.title || result.name" class="cover not object-fit-cover h-100 w-100 opacity-50 ">
     </div>
     
      <!--/poster  -->
@@ -67,16 +68,18 @@ export default {
 <style lang="scss" scoped>
 
 .card-sp {
-  width: calc(100% / 5.8);
+  width: calc(100% / 5);
   background-color: rgba($color: #000000, $alpha: .7);
   min-height: 300px;
-  margin: 8px;
+  border: 1px solid  #434343;
   font-size: .8rem;
   position: relative;
   cursor: pointer;
 
   &:hover img.cover {
     display: none;
+    width: 100%;
+    height: 100%;
   }
 
   .poster {
@@ -84,7 +87,7 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-  
+
   
     img.cover {
     width: 100%;
@@ -95,7 +98,7 @@ export default {
   
   .overview {
     overflow-y: scroll !important;
-    height: 200px;
+    height: 250px;
   }
 }
 
